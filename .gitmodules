@@ -1,0 +1,6 @@
+[submodule "Assets/ExternalPackages/unity-courtyard"]
+	path = Assets/ExternalPackages/unity-courtyard
+	url = https://github.com/matthewoots/unity-courtyard
+[submodule "Assets/ExternalPackages/unity-standard-environment"]
+	path = Assets/ExternalPackages/unity-standard-environment
+	url = https://github.com/matthewoots/unity-standard-environment
