@@ -22,7 +22,9 @@ public class RosMessageBus : MonoBehaviour
     }
     void Update()
     {
-
+        Debug.Log("Position: [" + local_pos + "]"); 
+        Debug.Log("Global Pos: [" + latitude + " " + longitude + "]");
+        Debug.Log("Rotation: [" + local_rot + "]");
     }
 
 

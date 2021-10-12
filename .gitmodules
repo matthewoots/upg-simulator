@@ -4,3 +4,6 @@
 [submodule "Assets/ExternalPackages/unity-standard-environment"]
 	path = Assets/ExternalPackages/unity-standard-environment
 	url = git@github.com:matthewoots/unity-standard-environment.git
+[submodule "Assets/ExternalPackages/graphy"]
+	path = Assets/ExternalPackages/graphy
+	url = git@github.com:Tayx94/graphy.git

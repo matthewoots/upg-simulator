@@ -4,12 +4,12 @@ using UnityEngine;
 using System.Collections;
 using Unity.Robotics.ROSTCPConnector;
 
-using RosBattMsg = RosMessageTypes.Sensor.MBatteryState;
-using RosPoseMsg = RosMessageTypes.Geometry.MPoseStamped;
-using RosVelMsg = RosMessageTypes.Geometry.MTwistStamped;
-using RosStateMsg = RosMessageTypes.Mavros.MState;
-using RosGlobalPosMsg = RosMessageTypes.Sensor.MNavSatFix;
-using RosActuatorControlMsg = RosMessageTypes.Mavros.MActuatorControl;
+using RosBattMsg = RosMessageTypes.Sensor.BatteryStateMsg;
+using RosPoseMsg = RosMessageTypes.Geometry.PoseStampedMsg;
+using RosVelMsg = RosMessageTypes.Geometry.TwistStampedMsg;
+using RosStateMsg = RosMessageTypes.Mavros.StateMsg;
+using RosGlobalPosMsg = RosMessageTypes.Sensor.NavSatFixMsg;
+using RosActuatorControlMsg = RosMessageTypes.Mavros.ActuatorControlMsg;
 
 public class RosMavrosSubscriber : MonoBehaviour
 {
@@ -30,7 +30,7 @@ public class RosMavrosSubscriber : MonoBehaviour
         ROSConnection.instance.Subscribe<RosPoseMsg>("mavros/local_position/pose", UavEnuPoseSubscriber);
         ROSConnection.instance.Subscribe<RosVelMsg>("mavros/local_position/velocity_local", UavEnuVelSubscriber);
         ROSConnection.instance.Subscribe<RosStateMsg>("mavros/state", UavStateSubscriber);
-        ROSConnection.instance.Subscribe<RosGlobalPosMsg>("mavros/global_position/local", UavGlobalPosSubscriber);
+        ROSConnection.instance.Subscribe<RosGlobalPosMsg>("mavros/global_position/global", UavGlobalPosSubscriber);
 
         bus = uav.GetComponent<RosMessageBus>();
     }
@@ -80,7 +80,6 @@ public class RosMavrosSubscriber : MonoBehaviour
             enuRotation.eulerAngles.z, 
             -enuRotation.eulerAngles.x);        
         // Debug.Log("unityEulerAngles: " + uav.transform.localRotation);
-        Debug.Log("unityLocalPos: " + pos);
 
         bus.local_pos = pos;
         bus.local_rot = enuRotation.eulerAngles;
