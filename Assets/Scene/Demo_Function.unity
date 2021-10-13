@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 0.10954571
+  m_AmbientIntensity: 0.7104854
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.18416114, g: 0.27454033, b: 0.24669261, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 438c091542ed58248846210796f0ceff, type: 2}
@@ -5411,14 +5411,22 @@ PrefabInstance:
     - target: {fileID: 11402166, guid: 03f4f21603a7d174798c8a5a679d4507, type: 3}
       propertyPath: _moon
       value: 
-      objectReference: {fileID: 96498382}
+      objectReference: {fileID: 0}
     - target: {fileID: 11402166, guid: 03f4f21603a7d174798c8a5a679d4507, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11402166, guid: 03f4f21603a7d174798c8a5a679d4507, type: 3}
       propertyPath: ambientMultiply
-      value: 2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11402166, guid: 03f4f21603a7d174798c8a5a679d4507, type: 3}
+      propertyPath: skyExposureMult
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11402166, guid: 03f4f21603a7d174798c8a5a679d4507, type: 3}
+      propertyPath: sunExposureMult
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 11402166, guid: 03f4f21603a7d174798c8a5a679d4507, type: 3}
       propertyPath: timeOfDayManager
@@ -5864,7 +5872,7 @@ Transform:
   - {fileID: 903700662}
   - {fileID: 1591619753}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &874126890
 GameObject:
@@ -8123,7 +8131,7 @@ MonoBehaviour:
   timeSlider: {fileID: 568059794}
   speedSlider: {fileID: 0}
   speedCurveMinMax: {x: 200, y: 30}
-  autoCycleTimeToggle: {fileID: 0}
+  autoCycleTimeToggle: {fileID: 850154507}
   defaultTime: 0.233
   updateCurve:
     serializedVersion: 2
@@ -8169,10 +8177,8 @@ MonoBehaviour:
   cycleTime: 77.770004
   props:
   - {fileID: 846093429}
-  - {fileID: 2140082276}
   suns:
   - {fileID: 846093429}
-  - {fileID: 2140082276}
   instantUpdate: []
   animationControl: 0
 --- !u!4 &1372808279
@@ -8189,7 +8195,7 @@ Transform:
   - {fileID: 1009071979}
   - {fileID: 1548894277}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1372808280
 MonoBehaviour:
@@ -11359,107 +11365,3 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2133212826}
   m_CullTransparentMesh: 0
---- !u!1001 &2140082275
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 124668, guid: 03f4f21603a7d174798c8a5a679d4507, type: 3}
-      propertyPath: m_Name
-      value: Sun
-      objectReference: {fileID: 0}
-    - target: {fileID: 431168, guid: 03f4f21603a7d174798c8a5a679d4507, type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 431168, guid: 03f4f21603a7d174798c8a5a679d4507, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 431168, guid: 03f4f21603a7d174798c8a5a679d4507, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 431168, guid: 03f4f21603a7d174798c8a5a679d4507, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 431168, guid: 03f4f21603a7d174798c8a5a679d4507, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.6945291
-      objectReference: {fileID: 0}
-    - target: {fileID: 431168, guid: 03f4f21603a7d174798c8a5a679d4507, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.7194646
-      objectReference: {fileID: 0}
-    - target: {fileID: 431168, guid: 03f4f21603a7d174798c8a5a679d4507, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 431168, guid: 03f4f21603a7d174798c8a5a679d4507, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 431168, guid: 03f4f21603a7d174798c8a5a679d4507, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 431168, guid: 03f4f21603a7d174798c8a5a679d4507, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 431168, guid: 03f4f21603a7d174798c8a5a679d4507, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 10806226, guid: 03f4f21603a7d174798c8a5a679d4507, type: 3}
-      propertyPath: m_Color.b
-      value: 0.6621732
-      objectReference: {fileID: 0}
-    - target: {fileID: 10806226, guid: 03f4f21603a7d174798c8a5a679d4507, type: 3}
-      propertyPath: m_Color.g
-      value: 0.7984008
-      objectReference: {fileID: 0}
-    - target: {fileID: 10806226, guid: 03f4f21603a7d174798c8a5a679d4507, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 10806226, guid: 03f4f21603a7d174798c8a5a679d4507, type: 3}
-      propertyPath: m_Intensity
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 10806226, guid: 03f4f21603a7d174798c8a5a679d4507, type: 3}
-      propertyPath: m_Shadows.m_Type
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 10806226, guid: 03f4f21603a7d174798c8a5a679d4507, type: 3}
-      propertyPath: m_Shadows.m_Strength
-      value: 0.685
-      objectReference: {fileID: 0}
-    - target: {fileID: 11402166, guid: 03f4f21603a7d174798c8a5a679d4507, type: 3}
-      propertyPath: time
-      value: 0.704
-      objectReference: {fileID: 0}
-    - target: {fileID: 11402166, guid: 03f4f21603a7d174798c8a5a679d4507, type: 3}
-      propertyPath: ambientMultiply
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 11402166, guid: 03f4f21603a7d174798c8a5a679d4507, type: 3}
-      propertyPath: timeOfDayManager
-      value: 
-      objectReference: {fileID: 1372808278}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 03f4f21603a7d174798c8a5a679d4507, type: 3}
---- !u!114 &2140082276 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 11402166, guid: 03f4f21603a7d174798c8a5a679d4507, type: 3}
-  m_PrefabInstance: {fileID: 2140082275}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5393ee854a415f40a6665b554b9f12d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
