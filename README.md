@@ -1,5 +1,11 @@
 # UPG-Simulator
-Unity3d Environment for UAV simulation, with connection to PX4 (Probably MAvlink CS and using TCP connection) and ROS [here](https://github.com/Unity-Technologies/Unity-Robotics-Hub/blob/main/tutorials/ros_unity_integration/setup.md "Unity-Technologies").
+Unity3d Environment for UAV simulation, with connection to PX4 and ROS [here](https://github.com/Unity-Technologies/Unity-Robotics-Hub/blob/main/tutorials/ros_unity_integration/setup.md "Unity-Technologies").
+
+**[Features]**
+- `PX4-UNITY-SIMULATOR` with PX4 SITL connection via TCP port
+- `MAVROS` messages supported via subscriber class
+- Undergoing testing for `point2` message to show global obstacle map
+- `TinyWhoop` and `Dji Fpv` Models from `Sketchfab`
 
 ---
 
@@ -12,10 +18,9 @@ Unity3d Environment for UAV simulation, with connection to PX4 (Probably MAvlink
 **[SOFTWARE]**
 - Unity 2020.3.6f1
 
-```
-[HDRP] is not supported
-[Substance engine] is not supported
-```
+**[NOT SUPPORTED ON UNITY-UBUNTU]**
+- [HDRP] is not supported
+- [Substance engine] is not supported
 
 ---
 

@@ -1,0 +1,3 @@
+[submodule "Assets/ExternalPackages/px4-unity-simulator"]
+	path = Assets/ExternalPackages/px4-unity-simulator
+	url = https://github.com/matthewoots/px4-unity-simulator.git
