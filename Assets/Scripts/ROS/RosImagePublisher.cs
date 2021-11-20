@@ -1,34 +1,25 @@
 using System;
 using UnityEngine;
 using Unity.Robotics.ROSTCPConnector;
-using RosImage = RosMessageTypes.Sensor.MImage;
-using System.Runtime.InteropServices;
-using System.Runtime.Serialization.Formatters.Binary;
+using RosImage = RosMessageTypes.Sensor.ImageMsg;
 using System.IO;
 
-// using RosColor = RosMessageTypes.RoboticsDemo.MUnityColor;
-
-[StructLayout(LayoutKind.Sequential, Pack = 1)] 
-
-public class RosPublisher : MonoBehaviour
+public class RosImagePublisher : MonoBehaviour
 {
     ROSConnection ros;
-    public GameObject uav;
-    public bool isStereo;
-    public Camera cameraLeft;
-    public Camera cameraRight;
+    float timeElapsed = 0;
+    public Camera cam;
+    public string topic = "image";
     public int cameraWidth = 1440;
     public int cameraHeight = 1080;
     public float publishMessageFrequency = 15f;
-    private float timeElapsed;
-    private Vector3 origin;
-
+    
     private uint ReturnImageWidth(Camera cam) { return (uint)cam.pixelWidth;}
     private uint ReturnImageHeight(Camera cam) { return (uint)cam.pixelHeight;}
 
     void Start()
     {
-        // start the ROS connection
+        // Start the ROS connection
         ros = ROSConnection.instance;
     }
 
@@ -36,18 +27,16 @@ public class RosPublisher : MonoBehaviour
     {
         timeElapsed += Time.deltaTime;
 
-        if (isStereo)
-        {
-            // Stereo Image Format
-            Texture2D imageLeft = ReturnRGBImage(cameraLeft,cameraWidth,cameraHeight);
-            Texture2D imageRight = ReturnRGBImage(cameraRight,cameraWidth,cameraHeight);
-            RosImage leftImage = CopyData(cameraLeft, imageLeft.GetRawTextureData(),"rgb8", true); // Use GetRawTextureData since EncodeToPNG or JPG does not import the whole size of the data
-            RosImage rightImage = CopyData(cameraRight, imageRight.GetRawTextureData(),"rgb8", true); // Use GetRawTextureData since EncodeToPNG or JPG does not import the whole size of the data
-            ros.Send("Image_Left", leftImage);
-            ros.Send("Image_Right", rightImage);
-            // Debug.Log("Image datasize = " + rightImage.data.Length * sizeof(byte) / 10e6 + "mb");
-        }
+        if (timeElapsed > 1/publishMessageFrequency)
+            timeElapsed = 0;
+        else
+            return;
 
+        // Image Format
+        Texture2D imageTexture = ReturnRGBImage(cam,cameraWidth,cameraHeight);
+        // Use GetRawTextureData since EncodeToPNG or JPG does not import the whole size of the data
+        RosImage imageRos = CopyData(cam, imageTexture.GetRawTextureData(),"rgb8", true); 
+        ros.Send(topic, imageRos);
     }
 
     private Texture2D ReturnRGBImage(Camera cam, int imageWidth, int imageHeight)
@@ -83,15 +72,4 @@ public class RosPublisher : MonoBehaviour
         return ImageData;      
     }
 
-    private void restrictMsgRate(RosImage leftImage, RosImage rightImage)
-    {
-        if (timeElapsed > 1/publishMessageFrequency)
-        {
-            // Finally send the message to server_endpoint.py running in ROS
-            ros.Send("Image_Left", leftImage);
-            ros.Send("Image_Right", rightImage);
-
-            timeElapsed = 0;
-        }
-    }
 }

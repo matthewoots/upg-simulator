@@ -1,5 +1,3 @@
-// Attach Mavros Subscriber to the UAV Model
-
 using UnityEngine;
 using System.Collections;
 using Unity.Robotics.ROSTCPConnector;
@@ -12,17 +10,12 @@ using RosGlobalPosMsg = RosMessageTypes.Sensor.NavSatFixMsg;
 using RosActuatorControlMsg = RosMessageTypes.Mavros.ActuatorControlMsg;
 
 public class RosMavrosSubscriber : MonoBehaviour
-{
-    public GameObject uav;
-    RosMessageBus bus;
-    public int uavid;   
-    public float RosBattRate = 0.001f; 
-    public float RosPoseRate = 0.001f; 
-    public float RosVelRate = 0.001f; 
-    public float RosStateRate = 0.001f; 
-    public float RosGloballRate = 0.001f;
-    private float lastBatttime; private float lastPosetime; private float lastVeltime; 
-    private float lastStatetime; private float lastGlobaltime;
+{  
+    public GameObject obj;
+    public float RosBattHz = 15.0f; public float RosPoseHz = 15.0f; public float RosVelHz = 15.0f; 
+    public float RosStateHz = 15.0f; public float RosGlobalHz = 15.0f;
+    private float BattTimer = 0; private float PoseTimer = 0; private float VelTimer = 0; 
+    private float StateTimer = 0; private float GlobalTimer = 0;
 
     void Start()
     {
@@ -31,33 +24,32 @@ public class RosMavrosSubscriber : MonoBehaviour
         ROSConnection.instance.Subscribe<RosVelMsg>("mavros/local_position/velocity_local", UavEnuVelSubscriber);
         ROSConnection.instance.Subscribe<RosStateMsg>("mavros/state", UavStateSubscriber);
         ROSConnection.instance.Subscribe<RosGlobalPosMsg>("mavros/global_position/global", UavGlobalPosSubscriber);
-
-        bus = uav.GetComponent<RosMessageBus>();
     }
 
     void UavBattSubscriber(RosBattMsg uavBattMessage)
     {
-        // Debug.Log("");
-        if (Time.time - lastBatttime < RosBattRate)
-        {
+        BattTimer += Time.deltaTime;
+
+        if (BattTimer > 1/RosBattHz)
+            BattTimer = 0;
+        else
             return;
-        }
+        
         float[] cell_voltage; float voltage; float percentage; float current;
         cell_voltage = uavBattMessage.cell_voltage; 
-        bus.voltage = uavBattMessage.voltage; 
-        bus.percentage = uavBattMessage.percentage; 
-        bus.current = uavBattMessage.current; 
-
-        lastBatttime = Time.time;
+        // voltage = uavBattMessage.voltage; 
+        // percentage = uavBattMessage.percentage; 
+        // current = uavBattMessage.current; 
     }
 
     void UavEnuPoseSubscriber(RosPoseMsg enuPoseMessage)
     {
-        // Debug.Log("");
-        if (Time.time - lastPosetime < RosPoseRate)
-        {
+        PoseTimer += Time.deltaTime;
+
+        if (PoseTimer > 1/RosPoseHz)
+            PoseTimer = 0;
+        else
             return;
-        }
 
         // UNITY is in NUW while MAVROS is in ENU
         // UNITY does not rotate relative to its frame, and rotation is absolute
@@ -81,63 +73,56 @@ public class RosMavrosSubscriber : MonoBehaviour
             -enuRotation.eulerAngles.x);        
         // Debug.Log("unityEulerAngles: " + uav.transform.localRotation);
 
-        bus.local_pos = pos;
-        bus.local_rot = enuRotation.eulerAngles;
+        // local_pos = pos;
+        // local_rot = enuRotation.eulerAngles;
 
-        uav.transform.position = pos;
-        uav.transform.localRotation = unityEulerAngles;
-
-        lastPosetime = Time.time;
+        obj.transform.position = pos;
+        obj.transform.localRotation = unityEulerAngles;
     }
 
     void UavEnuVelSubscriber(RosVelMsg uavVelMessage)
     {
-        // Debug.Log("");
-        if (Time.time - lastVeltime < RosVelRate)
-        {
+        VelTimer += Time.deltaTime;
+
+        if (VelTimer > 1/RosVelHz)
+            VelTimer = 0;
+        else
             return;
-        }
 
-        float vel_x; float vel_y; float vel_z;
-        bus.local_vel = new Vector3((float)uavVelMessage.twist.linear.y,
-            (float)uavVelMessage.twist.linear.z, 
-            -(float)uavVelMessage.twist.linear.x);
-
-        lastVeltime = Time.time;
+        // local_vel = new Vector3((float)uavVelMessage.twist.linear.y,
+            // (float)uavVelMessage.twist.linear.z, 
+            // -(float)uavVelMessage.twist.linear.x);
     }
 
     void UavStateSubscriber(RosStateMsg uavStateMessage)
     {
-        // Debug.Log("");
-        if (Time.time - lastStatetime < RosStateRate)
-        {
+        StateTimer += Time.deltaTime;
+
+        if (StateTimer > 1/RosStateHz)
+            StateTimer = 0;
+        else
             return;
-        }
 
-        bool guided; bool manual_input; byte system_status;
-        bus.connected = uavStateMessage.connected;
-        bus.armed = uavStateMessage.armed;
-        guided = uavStateMessage.guided;
-        manual_input = uavStateMessage.manual_input;
-        bus.mode = uavStateMessage.mode;
-        system_status = uavStateMessage.system_status;
-
-        lastStatetime = Time.time;
+        // connected = uavStateMessage.connected;
+        // armed = uavStateMessage.armed;
+        // guided = uavStateMessage.guided;
+        // manual_input = uavStateMessage.manual_input;
+        // mode = uavStateMessage.mode;
+        // system_status = uavStateMessage.system_status;
     }
 
     void UavGlobalPosSubscriber(RosGlobalPosMsg uavGlobalMessage)
     {
-        // Debug.Log("");
-        if (Time.time - lastGlobaltime < RosGloballRate)
-        {
+        GlobalTimer += Time.deltaTime;
+
+        if (GlobalTimer > 1/RosGlobalHz)
+            GlobalTimer = 0;
+        else
             return;
-        }
 
-        bus.latitude = uavGlobalMessage.latitude;
-        bus.longitude = uavGlobalMessage.longitude;
-        bus.altitude = uavGlobalMessage.altitude;
-
-        lastGlobaltime = Time.time;
+        // latitude = uavGlobalMessage.latitude;
+        // longitude = uavGlobalMessage.longitude;
+        // altitude = uavGlobalMessage.altitude;
     }
 
 }
