@@ -8,11 +8,11 @@ public class RaycastExample : MonoBehaviour
     float timeElapsed = 0;
     Vector3[] array;
     public List<Vector3> points;
-    public float dt = 0.1f;
+    public float dt = 2f;
     public int size_xy = 20;
     public int size_z = 15;
     public int step = 4; // Step for 1m
-    public GameObject obj;
+    public GameObject[] obj;
     public bool debug;
     
 
@@ -54,14 +54,29 @@ public class RaycastExample : MonoBehaviour
                 Debug.DrawRay(origin0, Vector3.left * dist, Color.green);
                 Debug.DrawRay(origin1, Vector3.right * dist, Color.red);
   
+                bool skipcollider;
+
                 // Check if instance id match
                 for (int i = 0; i < hits0.Length; i++)
                 {
-                    if (hits0[i].collider.gameObject.GetInstanceID() == obj.GetInstanceID())
+                    skipcollider = false;
+                    for (int n = 0; n < obj.Length; n++)
+                    {
+                        if (hits0[i].collider.gameObject.GetInstanceID() == obj[n].GetInstanceID())
+                            skipcollider = true;
+                    }
+                    if (skipcollider)
                         continue;
+
                     for (int l = 0; l < hits1.Length; l++)
                     {
-                        if (hits1[l].collider.gameObject.GetInstanceID() == obj.GetInstanceID())
+                        skipcollider = false;
+                        for (int n = 0; n < obj.Length; n++)
+                        {
+                            if (hits1[l].collider.gameObject.GetInstanceID() == obj[n].GetInstanceID())
+                                skipcollider = true;
+                        }
+                        if (skipcollider)
                             continue;
                         if (hits0[i].collider.gameObject.GetInstanceID() !=
                             hits1[l].collider.gameObject.GetInstanceID())

@@ -13,7 +13,7 @@ public class RosPointCloudPublisher : MonoBehaviour
     float timeElapsed = 0;
     public RaycastExample raycast;
     public string topic = "pcl";
-    public float publishMessageFrequency = 1f;
+    public float publishMessageFrequency = 0.5f;
     public string frameid = "/map";
 
     void Start()

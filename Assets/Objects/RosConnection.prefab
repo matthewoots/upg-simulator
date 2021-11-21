@@ -9,9 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3067090297260866246}
+  - component: {fileID: 2426284704821393289}
   - component: {fileID: 7525538152914935374}
   - component: {fileID: 838572652582707664}
   - component: {fileID: 2087549935857916519}
+  - component: {fileID: 4847931725500547363}
+  - component: {fileID: 4696513445611682021}
   m_Layer: 0
   m_Name: RosConnection
   m_TagString: Untagged
@@ -33,6 +36,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2426284704821393289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3084578811065032716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e120188e851b6f44b85f38aecc703ba6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7525538152914935374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87,5 +102,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   raycast: {fileID: 0}
   topic: pcl
-  publishMessageFrequency: 15
-  frameid: /world
+  publishMessageFrequency: 0.5
+  frameid: /map
+--- !u!114 &4847931725500547363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3084578811065032716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f94793cd2952e3d49b051428fc389f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rgui: {fileID: 4696513445611682021}
+  topic: cmd
+--- !u!114 &4696513445611682021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3084578811065032716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc613bfd0da9fa254a11900dce379a6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  width: 400
+  height: 40
+  enumCmd: 0
+  cmdbyte: 0
+  rect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0
+    height: 0
