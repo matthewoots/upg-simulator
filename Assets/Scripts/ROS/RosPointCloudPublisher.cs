@@ -11,7 +11,8 @@ public class RosPointCloudPublisher : MonoBehaviour
 {
     ROSConnection ros;
     float timeElapsed = 0;
-    public RaycastExample raycast;
+    // public RaycastExample raycast;
+    public PointCloudGenerator raycast;
     public string topic = "pcl";
     public float publishMessageFrequency = 0.5f;
     public string frameid = "/map";

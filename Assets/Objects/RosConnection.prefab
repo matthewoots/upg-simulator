@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2426284704821393289}
   - component: {fileID: 7525538152914935374}
   - component: {fileID: 838572652582707664}
-  - component: {fileID: 2087549935857916519}
   - component: {fileID: 4847931725500547363}
   - component: {fileID: 4696513445611682021}
   m_Layer: 0
@@ -88,22 +87,6 @@ MonoBehaviour:
   RosVelHz: 15
   RosStateHz: 15
   RosGlobalHz: 15
---- !u!114 &2087549935857916519
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3084578811065032716}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 685d284122a75b459a099e8e94b65675, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  raycast: {fileID: 0}
-  topic: pcl
-  publishMessageFrequency: 0.5
-  frameid: /map
 --- !u!114 &4847931725500547363
 MonoBehaviour:
   m_ObjectHideFlags: 0

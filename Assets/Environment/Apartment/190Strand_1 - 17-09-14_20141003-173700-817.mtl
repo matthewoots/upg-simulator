@@ -1,0 +1,327 @@
+newmtl Concrete,_Cast_In_Situ
+Ka 0.909803921568627 0.886274509803922 0.850980392156863
+Kd 0.909803921568627 0.886274509803922 0.850980392156863
+d 0
+newmtl Gypsum_Wall_Board
+Ka 0.976470588235294 0.976470588235294 0.976470588235294
+Kd 0.976470588235294 0.976470588235294 0.976470588235294
+d 1
+map_Ka Finishes.Gypsum_Board.Painted.White.jpg
+map_Kd Finishes.Gypsum_Board.Painted.White.jpg
+newmtl Brick,_Common
+Ka 0.470588235294118 0.470588235294118 0.470588235294118
+Kd 0.470588235294118 0.470588235294118 0.470588235294118
+d 0
+map_Ka Brick_Uniform_Running_Yellow.png
+map_Kd Brick_Uniform_Running_Yellow.png
+newmtl Brick,_Common,_Yellow
+Ka 0.470588235294118 0.470588235294118 0.470588235294118
+Kd 0.470588235294118 0.470588235294118 0.470588235294118
+d 0
+map_Ka Brick_Uniform_Running_Yellow.png
+map_Kd Brick_Uniform_Running_Yellow.png
+newmtl Door_-_Handle
+Ka 0.0666666666666667 0.0666666666666667 0.0666666666666667
+Kd 0.0666666666666667 0.0666666666666667 0.0666666666666667
+d 0
+newmtl Window_-_Glass
+Ka 0.772549019607843 0.823529411764706 0.768627450980392
+Kd 0.772549019607843 0.823529411764706 0.768627450980392
+d 0.2
+newmtl Aluminium
+Ka 0.6 0.6 0.6
+Kd 0.6 0.6 0.6
+d 0
+newmtl Window_Frame
+Ka 0.949019607843137 0.949019607843137 0.949019607843137
+Kd 0.949019607843137 0.949019607843137 0.949019607843137
+d 0
+newmtl Windows
+Ka 0.5 0.5 0.5
+Kd 0.5 0.5 0.5
+d 1
+newmtl Plastic_-_White
+Ka 0.917647058823529 0.917647058823529 0.917647058823529
+Kd 0.917647058823529 0.917647058823529 0.917647058823529
+d 0
+newmtl Wood_-_Birch
+Ka 1 1 1
+Kd 1 1 1
+d 0
+map_Ka Woods_&_Plastics.Finish_Carpentry.Wood.Red_Birch.png
+map_Kd Woods_&_Plastics.Finish_Carpentry.Wood.Red_Birch.png
+newmtl Metal___Aluminium
+Ka 0.6 0.6 0.6
+Kd 0.6 0.6 0.6
+d 0
+newmtl Wood_-_Walnut_Dark_Brown
+Ka 0.168627450980392 0.12156862745098 0.109803921568627
+Kd 0.168627450980392 0.12156862745098 0.109803921568627
+d 0
+map_Ka Woods_&_Plastics.Finish_Carpentry.Wood.Walnut.png
+map_Kd Woods_&_Plastics.Finish_Carpentry.Wood.Walnut.png
+newmtl Metal_-_Stainless_Steel,Polished
+Ka 0.6 0.6 0.6
+Kd 0.6 0.6 0.6
+d 0
+newmtl Glass
+Ka 0.772549019607843 0.823529411764706 0.768627450980392
+Kd 0.772549019607843 0.823529411764706 0.768627450980392
+d 0.2
+newmtl Railings
+Ka 0.5 0.5 0.5
+Kd 0.5 0.5 0.5
+d 1
+newmtl Top Rails
+Ka 0.5 0.5 0.5
+Kd 0.5 0.5 0.5
+d 1
+newmtl Metal,_Sheeting_Rails(1)
+Ka 0.6 0.6 0.6
+Kd 0.6 0.6 0.6
+d 0
+newmtl Plaster
+Ka 0.819607843137255 0.819607843137255 0.815686274509804
+Kd 0.819607843137255 0.819607843137255 0.815686274509804
+d 1
+map_Ka Finishes.Plaster.Stucco.Fine.White.jpg
+map_Kd Finishes.Plaster.Stucco.Fine.White.jpg
+newmtl Default_Wall
+Ka 0.313725490196078 0.313725490196078 0.313725490196078
+Kd 0.313725490196078 0.313725490196078 0.313725490196078
+d 1
+newmtl Steel,_Polished
+Ka 0.6 0.6 0.6
+Kd 0.6 0.6 0.6
+d 0
+newmtl Wood_Dark_Brown
+Ka 0.168627450980392 0.12156862745098 0.109803921568627
+Kd 0.168627450980392 0.12156862745098 0.109803921568627
+d 0
+map_Ka Woods_&_Plastics.Finish_Carpentry.Wood.Walnut.png
+map_Kd Woods_&_Plastics.Finish_Carpentry.Wood.Walnut.png
+newmtl Door_-_Architrave
+Ka 0.815686274509804 0.474509803921569 0
+Kd 0.815686274509804 0.474509803921569 0
+d 0
+map_Ka Woods_&_Plastics.Finish_Carpentry.Wood.Pine.png
+map_Kd Woods_&_Plastics.Finish_Carpentry.Wood.Pine.png
+newmtl Door_-_Frame/Mullion
+Ka 1 1 1
+Kd 1 1 1
+d 0
+map_Ka Woods_&_Plastics.Finish_Carpentry.Wood.Pine.png
+map_Kd Woods_&_Plastics.Finish_Carpentry.Wood.Pine.png
+newmtl Door_-_Panel
+Ka 0.462745098039216 0.290196078431373 0.0392156862745098
+Kd 0.462745098039216 0.290196078431373 0.0392156862745098
+d 0
+map_Ka Woods_&_Plastics.Finish_Carpentry.Wood.Red_Birch.png
+map_Kd Woods_&_Plastics.Finish_Carpentry.Wood.Red_Birch.png
+newmtl Textile_-_White
+Ka 0.847058823529412 0.847058823529412 0.8
+Kd 0.847058823529412 0.847058823529412 0.8
+d 0
+newmtl Metal_-_Chrome
+Ka 0.6 0.6 0.6
+Kd 0.6 0.6 0.6
+d 0
+newmtl Porcelain
+Ka 0.956862745098039 0.956862745098039 0.956862745098039
+Kd 0.956862745098039 0.956862745098039 0.956862745098039
+d 0
+newmtl Concrete,_Precast
+Ka 0.509803921568627 0.52156862745098 0.466666666666667
+Kd 0.509803921568627 0.52156862745098 0.466666666666667
+d 1
+map_Ka Concrete.Precast_Structural_Concrete.Smooth.jpg
+map_Kd Concrete.Precast_Structural_Concrete.Smooth.jpg
+newmtl White_Oak_-_Mystic_Brown
+Ka 0.843137254901961 0.843137254901961 0.843137254901961
+Kd 0.843137254901961 0.843137254901961 0.843137254901961
+d 0
+map_Ka white_oak_mysticBrown.png
+map_Kd white_oak_mysticBrown.png
+newmtl Metal_-_Allermuir_-_Polished_Aluminum
+Ka 0.6 0.6 0.6
+Kd 0.6 0.6 0.6
+d 0
+newmtl Porcelain_-_White
+Ka 0.956862745098039 0.956862745098039 0.956862745098039
+Kd 0.956862745098039 0.956862745098039 0.956862745098039
+d 0
+newmtl Laminate_-_Ivory,_Matte
+Ka 0.847058823529412 0.847058823529412 0.8
+Kd 0.847058823529412 0.847058823529412 0.8
+d 0
+newmtl Metal_-_Steel,_Polished
+Ka 0.6 0.6 0.6
+Kd 0.6 0.6 0.6
+d 0
+newmtl Metal_-_Allermuir_-_Silver
+Ka 0.6 0.6 0.6
+Kd 0.6 0.6 0.6
+d 0
+newmtl Paint_-_Kimball_Office_-_Priority_-_Soli
+Ka 0.474509803921569 0 0
+Kd 0.474509803921569 0 0
+d 0
+newmtl Laminate_Finish_-_Kimball_Office_-_Prior
+Ka 0.474509803921569 0 0
+Kd 0.474509803921569 0 0
+d 0
+newmtl Leather_-_Allermuir_-_Fabric_-_Leather_-
+Ka 0.6 0.6 0.6
+Kd 0.6 0.6 0.6
+d 1
+map_Ka Furnishings.Fabrics.Leather.Pebble.Brown.png
+map_Kd Furnishings.Fabrics.Leather.Pebble.Brown.png
+newmtl Glass_-_Clear,_Grey
+Ka 0.866666666666667 0.866666666666667 0.866666666666667
+Kd 0.866666666666667 0.866666666666667 0.866666666666667
+d 0.2
+newmtl chair-white_fabric
+Ka 1 1 1
+Kd 1 1 1
+d 1
+map_Ka Furnishings.Fabrics.Linen.Beige.png
+map_Kd Furnishings.Fabrics.Linen.Beige.png
+newmtl Dark_Brown
+Ka 0.941176470588235 0.443137254901961 0.156862745098039
+Kd 0.941176470588235 0.443137254901961 0.156862745098039
+d 0
+map_Ka Woods_&_Plastics.Finish_Carpentry.Wood.Walnut.png
+map_Kd Woods_&_Plastics.Finish_Carpentry.Wood.Walnut.png
+newmtl Metal_-_Chrome_Polished
+Ka 0.6 0.6 0.6
+Kd 0.6 0.6 0.6
+d 0
+newmtl Fabric_-_Leather_Brown
+Ka 0.643137254901961 0.52156862745098 0.384313725490196
+Kd 0.643137254901961 0.52156862745098 0.384313725490196
+d 0
+newmtl Fabric_-_Green
+Ka 1 1 1
+Kd 1 1 1
+d 1
+map_Ka Furnishings.Fabrics.Leather.Brown.png
+map_Kd Furnishings.Fabrics.Leather.Brown.png
+newmtl Glass,_Clear_Glazing,_Tempered
+Ka 0.772549019607843 0.823529411764706 0.768627450980392
+Kd 0.772549019607843 0.823529411764706 0.768627450980392
+d 0.2
+newmtl Wax_-_Candle
+Ka 0.949019607843137 0.517647058823529 0.388235294117647
+Kd 0.949019607843137 0.517647058823529 0.388235294117647
+d 0
+newmtl TOWEL
+Ka 0.313725490196078 0.313725490196078 0.313725490196078
+Kd 0.313725490196078 0.313725490196078 0.313725490196078
+d 1
+newmtl CHROME
+Ka 0.313725490196078 0.313725490196078 0.313725490196078
+Kd 0.313725490196078 0.313725490196078 0.313725490196078
+d 1
+newmtl metal_table
+Ka 0.658823529411765 0.658823529411765 0.658823529411765
+Kd 0.658823529411765 0.658823529411765 0.658823529411765
+d 0
+newmtl Travertine
+Ka 0.76078431372549 0.717647058823529 0.619607843137255
+Kd 0.76078431372549 0.717647058823529 0.619607843137255
+d 1
+map_Ka Masonry.Stone.Travertine.Cream.jpg
+map_Kd Masonry.Stone.Travertine.Cream.jpg
+newmtl Metal_-_Paint_Finish_-_Dark_Gray,_Matte
+Ka 0.266666666666667 0.266666666666667 0.266666666666667
+Kd 0.266666666666667 0.266666666666667 0.266666666666667
+d 0
+newmtl Metal_-_Stainless_Steel
+Ka 0.6 0.6 0.6
+Kd 0.6 0.6 0.6
+d 0
+newmtl Wood_-_Walnut,_Natural
+Ka 0.168627450980392 0.12156862745098 0.109803921568627
+Kd 0.168627450980392 0.12156862745098 0.109803921568627
+d 0
+map_Ka Woods_&_Plastics.Finish_Carpentry.Wood.Walnut.png
+map_Kd Woods_&_Plastics.Finish_Carpentry.Wood.Walnut.png
+newmtl Furniture
+Ka 0.5 0.5 0.5
+Kd 0.5 0.5 0.5
+d 1
+newmtl Plastic_-_Gray
+Ka 0.247058823529412 0.247058823529412 0.247058823529412
+Kd 0.247058823529412 0.247058823529412 0.247058823529412
+d 0
+newmtl Plastic_-_Black
+Ka 0.0196078431372549 0.0196078431372549 0.0196078431372549
+Kd 0.0196078431372549 0.0196078431372549 0.0196078431372549
+d 0
+newmtl Marble
+Ka 0.470588235294118 0.470588235294118 0.470588235294118
+Kd 0.470588235294118 0.470588235294118 0.470588235294118
+d 0
+map_Ka Masonry.Stone.Marble.Square.Stacked.Polished.White.coarse.png
+map_Kd Masonry.Stone.Marble.Square.Stacked.Polished.White.coarse.png
+newmtl Plastic_-_Allermuir_-_Black
+Ka 0.0196078431372549 0.0196078431372549 0.0196078431372549
+Kd 0.0196078431372549 0.0196078431372549 0.0196078431372549
+d 0
+newmtl Fabric_-_Allermuir_-_Silcoates
+Ka 0.309803921568627 0.309803921568627 0.309803921568627
+Kd 0.309803921568627 0.309803921568627 0.309803921568627
+d 1
+newmtl Mirror
+Ka 0.780392156862745 0.780392156862745 0.780392156862745
+Kd 0.780392156862745 0.780392156862745 0.780392156862745
+d 0
+newmtl Mirror_Frame
+Ka 0 0 0
+Kd 0 0 0
+d 1
+map_Ka Woods_and_Plastics.Finish_Carpentry.Wood.Walnut.jpg
+map_Kd Woods_and_Plastics.Finish_Carpentry.Wood.Walnut.jpg
+newmtl Polished_Chrome
+Ka 0.6 0.6 0.6
+Kd 0.6 0.6 0.6
+d 0
+newmtl Plumbing Fixtures
+Ka 0.5 0.5 0.5
+Kd 0.5 0.5 0.5
+d 1
+newmtl Sofa_arm
+Ka 0.6 0.6 0.6
+Kd 0.6 0.6 0.6
+d 0
+newmtl Sofa_seat
+Ka 0.313725490196078 0.313725490196078 0.313725490196078
+Kd 0.313725490196078 0.313725490196078 0.313725490196078
+d 1
+newmtl Leather_-_Dark_Brown
+Ka 1 1 1
+Kd 1 1 1
+d 1
+map_Ka Furnishings.Fabrics.Leather.Brown.png
+map_Kd Furnishings.Fabrics.Leather.Brown.png
+newmtl Cabinets
+Ka 0.956862745098039 0.956862745098039 0.956862745098039
+Kd 0.956862745098039 0.956862745098039 0.956862745098039
+d 0
+newmtl Cabinets_-_Handles
+Ka 0.6 0.6 0.6
+Kd 0.6 0.6 0.6
+d 0
+newmtl Glass,_Clear_Glazing
+Ka 0.772549019607843 0.823529411764706 0.768627450980392
+Kd 0.772549019607843 0.823529411764706 0.768627450980392
+d 0.2
+newmtl Cabinets_-_Panel/Glass
+Ka 0.772549019607843 0.823529411764706 0.768627450980392
+Kd 0.772549019607843 0.823529411764706 0.768627450980392
+d 0.2
+newmtl Metal_-_Paint_Finish_-_Ivory,_Glossy
+Ka 0.949019607843137 0.949019607843137 0.898039215686275
+Kd 0.949019607843137 0.949019607843137 0.898039215686275
+d 0
+
