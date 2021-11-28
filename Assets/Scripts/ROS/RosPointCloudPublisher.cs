@@ -9,7 +9,7 @@ using System.Collections.Generic;
 
 public class RosPointCloudPublisher : MonoBehaviour
 {
-    ROSConnection ros;
+    public ROSConnection ros;
     float timeElapsed = 0;
     // public RaycastExample raycast;
     public PointCloudGenerator raycast;
@@ -20,7 +20,6 @@ public class RosPointCloudPublisher : MonoBehaviour
     void Start()
     {
         // Start the ROS connection
-        ros = ROSConnection.instance;
         ros.RegisterPublisher<RosPCL>(topic);
     }
 

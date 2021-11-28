@@ -11,19 +11,28 @@ using RosActuatorControlMsg = RosMessageTypes.Mavros.ActuatorControlMsg;
 
 public class RosMavrosSubscriber : MonoBehaviour
 {  
+    public ROSConnection ros;
     public GameObject obj;
-    public float RosBattHz = 15.0f; public float RosPoseHz = 15.0f; public float RosVelHz = 15.0f; 
-    public float RosStateHz = 15.0f; public float RosGlobalHz = 15.0f;
+    public string id = "S0/";
+    public float RosBattHz = 1.0f; public float RosPoseHz = 30.0f; public float RosVelHz = 30.0f; 
+    public float RosStateHz = 1.0f; public float RosGlobalHz = 50.0f;
     private float BattTimer = 0; private float PoseTimer = 0; private float VelTimer = 0; 
     private float StateTimer = 0; private float GlobalTimer = 0;
+    public Vector3 offset = new Vector3(0,0.7f,0);
+    private float timeElapsed;
 
     void Start()
     {
-        ROSConnection.instance.Subscribe<RosBattMsg>("mavros/battery", UavBattSubscriber);
-        ROSConnection.instance.Subscribe<RosPoseMsg>("mavros/local_position/pose", UavEnuPoseSubscriber);
-        ROSConnection.instance.Subscribe<RosVelMsg>("mavros/local_position/velocity_local", UavEnuVelSubscriber);
-        ROSConnection.instance.Subscribe<RosStateMsg>("mavros/state", UavStateSubscriber);
-        ROSConnection.instance.Subscribe<RosGlobalPosMsg>("mavros/global_position/global", UavGlobalPosSubscriber);
+        ros.Subscribe<RosBattMsg>(id + "mavros/battery", UavBattSubscriber);
+        ros.Subscribe<RosPoseMsg>(id + "mavros/local_position/pose", UavEnuPoseSubscriber);
+        ros.Subscribe<RosVelMsg>(id + "mavros/local_position/velocity_local", UavEnuVelSubscriber);
+        ros.Subscribe<RosStateMsg>(id + "mavros/state", UavStateSubscriber);
+        ros.Subscribe<RosGlobalPosMsg>(id + "mavros/global_position/global", UavGlobalPosSubscriber);
+    }
+
+    void Update()
+    {
+        
     }
 
     void UavBattSubscriber(RosBattMsg uavBattMessage)
@@ -76,7 +85,7 @@ public class RosMavrosSubscriber : MonoBehaviour
         // local_pos = pos;
         // local_rot = enuRotation.eulerAngles;
 
-        obj.transform.position = pos;
+        obj.transform.position = pos + offset;
         obj.transform.localRotation = unityEulerAngles;
     }
 

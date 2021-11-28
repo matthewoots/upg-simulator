@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 685d284122a75b459a099e8e94b65675, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ros: {fileID: 0}
   raycast: {fileID: 5422260246293625068}
   topic: pcl
   publishMessageFrequency: 0.5

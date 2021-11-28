@@ -9,7 +9,7 @@ using RapidGUI.Example;
 
 public class RosCommandPublisher : MonoBehaviour
 {
-    ROSConnection ros;
+    public ROSConnection ros;
     public RguiCommand rgui;
     public string topic = "cmd";
     sbyte previousCmd;
@@ -18,7 +18,6 @@ public class RosCommandPublisher : MonoBehaviour
     void Start()
     {
         // Start the ROS connection
-        ros = ROSConnection.instance;
         ros.RegisterPublisher<RosCmd>(topic);
     }
 
