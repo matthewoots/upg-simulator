@@ -1298,6 +1298,14 @@ PrefabInstance:
       propertyPath: obj.Array.data[4]
       value: 
       objectReference: {fileID: 476042445}
+    - target: {fileID: 5422260246293625068, guid: 4cfbb19bf99815f6da8c36d5d52e5189, type: 3}
+      propertyPath: vertical_resolution
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 5422260246293625068, guid: 4cfbb19bf99815f6da8c36d5d52e5189, type: 3}
+      propertyPath: horizontal_resolution
+      value: 0.025
+      objectReference: {fileID: 0}
     - target: {fileID: 6314527986786945054, guid: 4cfbb19bf99815f6da8c36d5d52e5189, type: 3}
       propertyPath: m_Name
       value: PointCloudScan
