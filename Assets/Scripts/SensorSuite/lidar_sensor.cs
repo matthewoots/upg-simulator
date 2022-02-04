@@ -35,7 +35,7 @@ namespace sensors_suite {
         [Header("Ouster Specific Parameters")]
         public int rotation_rate = 10; /* @brief OS1-16 10 or 20 Hz */
         public double total_vertical_fov_deg = 32.2; /* @brief OS1-16 32.2 degrees */
-        public double total_horizontal_fov_deg = 360.0; /* @brief OS1-16 320 degrees */
+        public double total_horizontal_fov_deg = 360.0; /* @brief OS1-16 360 degrees */
         public double scan_range = 40.0; /* @brief OS1-16 maximum scan range 40.0m */
         public double resolution = 0.012; /* @brief OS1-16 range resolution 1.20cm */
         public int vertical_scan_lines = 16; /* @brief OS1-16 16 lines for vertical scan */
@@ -115,9 +115,9 @@ namespace sensors_suite {
                 data[k] = new ros_geometry_point();
 
                 /* @brief UNITY is in EUN LH to ROS in NWU RH */
-                data[k].x = vector_points[k].z;
-                data[k].y = - vector_points[k].x;
-                data[k].z = vector_points[k].y;
+                data[k].x = vector_points[k].z - current_position.z;
+                data[k].y = - (vector_points[k].x - current_position.x);
+                data[k].z = vector_points[k].y - current_position.y;
             }
             pcl.header.frame_id = frame_id;
             pcl.points = data;
